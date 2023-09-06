@@ -103,8 +103,8 @@ Reserved Notation "[littleo 'of' f 'for' fT ]" (at level 0, f at level 0,
 Reserved Notation "[littleo 'of' f ]" (at level 0, f at level 0,
   format "[littleo  'of'  f ]").
 
-Reserved Notation "'o_ x" (at level 200, x at level 0, only parsing).
-Reserved Notation "'o" (at level 200, only parsing).
+Reserved Notation "'o_ x" (at level 0, x at level 0, only parsing).
+Reserved Notation "'o" (at level 0, only parsing).
 (* Parsing *)
 Reserved Notation "[o_ x e 'of' f ]" (at level 0, x, e at level 0, only parsing).
 (*Printing*)
@@ -116,8 +116,8 @@ Reserved Notation "''o_' x e "
   (at level 0, x, e at level 0, format "''o_' x  e ").
 Reserved Notation "''a_o_' x e "
   (at level 0, x, e at level 0, format "''a_o_' x  e ").
-Reserved Notation "''o' '_' x"
-  (at level 0, x at level 0, format "''o' '_' x").
+Reserved Notation "''o_' x"
+  (at level 0, x at level 0, format "''o_' x").
 
 Reserved Notation "f = g '+o_' F h"
   (at level 70, no associativity,
@@ -174,8 +174,8 @@ Reserved Notation "[bigO 'of' f 'for' fT ]" (at level 0, f at level 0,
 Reserved Notation "[bigO 'of' f ]" (at level 0, f at level 0,
   format "[bigO  'of'  f ]").
 
-Reserved Notation "'O_ x" (at level 200, x at level 0, only parsing).
-Reserved Notation "'O" (at level 200, only parsing).
+Reserved Notation "'O_ x" (at level 0, x at level 0, only parsing).
+Reserved Notation "'O" (at level 0, only parsing).
 (* Parsing *)
 Reserved Notation "[O_ x e 'of' f ]" (at level 0, x, e at level 0, only parsing).
 (*Printing*)
@@ -340,7 +340,7 @@ Notation "[o '_' x e 'of' f ]" := (the_littleo _ _ (PhantomF x) f e).
    without looking at the contents, use showo to display *)
 Notation "''o_' x e " := (the_littleo the_tag _ (PhantomF x) _ e).
 Notation "''a_o_' x e " := (the_littleo a_tag _ (PhantomF x) _ e).
-Notation "''o' '_' x" := (the_littleo gen_tag _ (PhantomF x) _).
+Notation "''o_' x" := (the_littleo gen_tag _ (PhantomF x) _).
 
 Notation "f = g '+o_' F h" :=
   (f%function = g%function + mklittleo the_tag F (f \- g) h).
@@ -720,7 +720,7 @@ Notation "[o '_' x e 'of' f ]" := (the_littleo _ _ (Phantom _ x) f e).
    without looking at the contents, use showo to display *)
 Notation "''o_' x e " := (the_littleo the_tag _ (Phantom _ x) _ e).
 Notation "''a_o_' x e " := (the_littleo a_tag _ (Phantom _ x) _ e).
-Notation "''o' '_' x" := (the_littleo gen_tag _ (Phantom _ x) _).
+Notation "''o_' x" := (the_littleo gen_tag _ (Phantom _ x) _).
 
 Notation "''o_(' x \near F ')' e" :=
   (the_littleo the_tag _ (PhantomF F) _ (fun x => e) x).
